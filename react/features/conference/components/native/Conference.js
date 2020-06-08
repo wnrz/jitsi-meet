@@ -296,7 +296,8 @@ class Conference extends AbstractConference<Props, *> {
 
                     { _shouldDisplayTileView || <DisplayNameLabel participantId = { _largeVideoParticipantId } /> }
 
-                    <LonelyMeetingExperience />
+
+                    {/* <LonelyMeetingExperience /> */}
 
                     {/*
                       * The Toolbox is in a stacking layer below the Filmstrip.
@@ -311,7 +312,7 @@ class Conference extends AbstractConference<Props, *> {
                       * React Components depict the videos of the conference's
                       * participants.
                       */
-                        _shouldDisplayTileView ? undefined : <Filmstrip />
+                        //去掉瓦片头像 _shouldDisplayTileView ? undefined : <Filmstrip />
                     }
                 </SafeAreaView>
 

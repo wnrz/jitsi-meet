@@ -29,10 +29,15 @@
 
 -             (BOOL)application:(UIApplication *)application
   didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//  NSURL *jsCodeLocation;
+//  jsCodeLocation = [NSURL URLWithString:@"http://192.168.3.25:8081/index.ios.bundle?platform=ios&dev=true"];
+
+//  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"/main.ios" withExtension:@"jsbundle"];
+
     JitsiMeet *jitsiMeet = [JitsiMeet sharedInstance];
 
     jitsiMeet.conferenceActivityType = JitsiMeetConferenceActivityType;
-    jitsiMeet.customUrlScheme = @"org.jitsi.meet";
+    jitsiMeet.customUrlScheme = @"com.jitsi.audio";
     jitsiMeet.universalLinkDomains = @[@"meet.jit.si", @"alpha.jitsi.net", @"beta.meet.jit.si"];
 
     jitsiMeet.defaultConferenceOptions = [JitsiMeetConferenceOptions fromBuilder:^(JitsiMeetConferenceOptionsBuilder *builder) {

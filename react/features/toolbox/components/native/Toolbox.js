@@ -104,20 +104,20 @@ class Toolbox extends PureComponent<Props> {
                 accessibilityRole = 'toolbar'
                 pointerEvents = 'box-none'
                 style = { styles.toolbar }>
-                <ChatButton
+                {/*去掉聊天按钮 <ChatButton
                     styles = { buttonStylesBorderless }
-                    toggledStyles = { this._getChatButtonToggledStyle(toggledButtonStyles) } />
+                    toggledStyles = { this._getChatButtonToggledStyle(toggledButtonStyles) } /> */}
                 <AudioMuteButton
                     styles = { buttonStyles }
                     toggledStyles = { toggledButtonStyles } />
                 <HangupButton
                     styles = { hangupButtonStyles } />
-                <VideoMuteButton
+                {/*去掉视频按钮 <VideoMuteButton
                     styles = { buttonStyles }
-                    toggledStyles = { toggledButtonStyles } />
-                <OverflowMenuButton
+                    toggledStyles = { toggledButtonStyles } /> */}
+                { <OverflowMenuButton
                     styles = { buttonStylesBorderless }
-                    toggledStyles = { toggledButtonStyles } />
+                    toggledStyles = { toggledButtonStyles } /> /* 去掉更多按钮*/}
             </View>
         );
     }
