@@ -200,8 +200,7 @@ function _sendConferenceEvent(
     }
 
     if (_swallowEvent(store, action, data)) {
-        // 去掉限制
-        // return;
+        return;
     }
 
     let type_;

@@ -96,6 +96,10 @@
     [self _onJitsiMeetViewDelegateEvent:@"CONFERENCE_WILL_JOIN" withData:data];
 }
 
+- (void)participantCount:(NSDictionary *)data {
+    [self _onJitsiMeetViewDelegateEvent:@"PARTICIPANT_COUNT" withData:data];
+}
+
 #if 0
 - (void)enterPictureInPicture:(NSDictionary *)data {
     [self _onJitsiMeetViewDelegateEvent:@"ENTER_PICTURE_IN_PICTURE" withData:data];

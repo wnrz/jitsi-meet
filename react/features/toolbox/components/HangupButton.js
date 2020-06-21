@@ -48,9 +48,9 @@ class HangupButton extends AbstractHangupButton<Props, *> {
             // FIXME: these should be unified.
             //去掉结束后的跳转
             // if (navigator.product === 'ReactNative') {
-            //     this.props.dispatch(appNavigate(undefined));
+                this.props.dispatch(appNavigate(undefined));
             // } else {
-                this.props.dispatch(disconnect(true));
+                // this.props.dispatch(disconnect(true));
             // }
         });
     }
