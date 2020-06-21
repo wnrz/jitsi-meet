@@ -46,11 +46,12 @@ class HangupButton extends AbstractHangupButton<Props, *> {
             sendAnalytics(createToolbarEvent('hangup'));
 
             // FIXME: these should be unified.
-            if (navigator.product === 'ReactNative') {
-                this.props.dispatch(appNavigate(undefined));
-            } else {
+            //去掉结束后的跳转
+            // if (navigator.product === 'ReactNative') {
+            //     this.props.dispatch(appNavigate(undefined));
+            // } else {
                 this.props.dispatch(disconnect(true));
-            }
+            // }
         });
     }
 

@@ -55,4 +55,6 @@
  */
 - (void)enterPictureInPicture:(NSDictionary *)data;
 
+- (void)conferenceLeft:(NSDictionary *)data;
+
 @end

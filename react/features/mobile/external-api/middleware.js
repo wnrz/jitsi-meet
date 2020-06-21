@@ -63,7 +63,11 @@ MiddlewareRegistry.register(store => next => action => {
     }
 
     case CONFERENCE_JOINED:
+        _sendConferenceEvent(store, action); //增加回调
+        break;
     case CONFERENCE_LEFT:
+        _sendConferenceEvent(store, action); //增加回调
+        break;
     case CONFERENCE_WILL_JOIN:
         _sendConferenceEvent(store, action);
         break;
@@ -200,7 +204,8 @@ function _sendConferenceEvent(
     }
 
     if (_swallowEvent(store, action, data)) {
-        return;
+        // 去掉限制
+        // return;
     }
 
     let type_;
@@ -208,7 +213,8 @@ function _sendConferenceEvent(
     switch (type) {
     case CONFERENCE_FAILED:
     case CONFERENCE_LEFT:
-        type_ = CONFERENCE_TERMINATED;
+                // 去掉限制
+        // type_ = CONFERENCE_TERMINATED;
         break;
     default:
         type_ = type;
