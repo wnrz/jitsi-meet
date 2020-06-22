@@ -30,7 +30,7 @@ export function isFilmstripVisible(stateful: Object | Function) {
         const externalAPIScope = getAppProp(stateful ,"externalAPIScope");
         
         externalAPIScope
-        && NativeModules.ExternalAPI.sendEvent("participantCount", {"participantCount":num}, externalAPIScope);
+        && NativeModules.ExternalAPI.sendEvent("PARTICIPANT_COUNT", {"participantCount":num}, externalAPIScope);
 
     }
         return participantCount > 1;

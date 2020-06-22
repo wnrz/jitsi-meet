@@ -127,7 +127,7 @@ const _throttledNotifyParticipantConnected = throttle((dispatch: Dispatch<any>) 
 
     let notificationProps;
     //获取房间新加入人数
-    console.info(`participantCount${joinedParticipantsCount}?????????????`);
+    console.info(`participantCount ${joinedParticipantsCount}?????????????`);
 
     if (joinedParticipantsCount >= 3) {
         notificationProps = {
