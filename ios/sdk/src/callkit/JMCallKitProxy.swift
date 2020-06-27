@@ -74,7 +74,8 @@ import Foundation
         configuration.maximumCallsPerCallGroup = 1
         configuration.ringtoneSound = ringtoneSound
         configuration.supportedHandleTypes = [CXHandle.HandleType.generic]
-        configuration.supportsVideo = true
+        //去掉视频支持
+        configuration.supportsVideo = false
 
         providerConfiguration = configuration
     }
