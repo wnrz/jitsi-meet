@@ -22,7 +22,7 @@
 #import "JitsiMeetView+Private.h"
 #import "ReactUtils.h"
 #import "RNRootView.h"
-
+#import "LocaleDetector.h"
 
 /**
  * Backwards compatibility: turn the boolean prop into a feature flag.
@@ -108,6 +108,9 @@ static void initializeViewsMap() {
 #pragma mark API
 
 - (void)join:(JitsiMeetConferenceOptions *)options {
+    if (options.locale != nil && options.locale.length > 0){
+        locale_detector_lang = options.locale;
+    }
     [self setProps:options == nil ? @{} : [options asProps]];
 }
 

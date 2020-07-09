@@ -32,7 +32,8 @@ import java.util.Map;
  * Module which provides information about the system locale.
  */
 class LocaleDetector extends ReactContextBaseJavaModule {
-
+    
+    static   String locale;
     public LocaleDetector(ReactApplicationContext reactContext) {
         super(reactContext);
     }
@@ -47,7 +48,11 @@ class LocaleDetector extends ReactContextBaseJavaModule {
     public Map<String, Object> getConstants() {
         Context context = getReactApplicationContext();
         HashMap<String,Object> constants = new HashMap<>();
-        constants.put("locale", context.getResources().getConfiguration().locale.toString());
+        if (LocaleDetector.locale != null && LocaleDetector.locale.length() > 0){
+            constants.put("locale", LocaleDetector.locale);
+        }else{
+            constants.put("locale", context.getResources().getConfiguration().locale.toString());
+        }
         return constants;
     }
 

@@ -22,8 +22,7 @@
 
 #import <React/RCTBridgeModule.h>
 
-@interface LocaleDetector : NSObject <RCTBridgeModule>
-@end
+#import "LocaleDetector.h"
 
 @implementation LocaleDetector
 
@@ -34,6 +33,9 @@ RCT_EXPORT_MODULE();
 }
 
 - (NSDictionary *)constantsToExport {
+    if (locale_detector_lang.length > 0){
+        return @{ @"locale": locale_detector_lang };
+    }
     return @{ @"locale": [[NSLocale preferredLanguages] objectAtIndex:0] };
 }
 

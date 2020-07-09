@@ -48,6 +48,7 @@ public class JitsiMeetConferenceOptions implements Parcelable {
      * JWT token used for authentication.
      */
     private String token;
+    private String locale;
 
     /**
      * Color scheme override, see: https://github.com/jitsi/jitsi-meet/blob/dbedee5e22e5dcf9c92db96ef5bb3c9982fc526d/react/features/base/color-scheme/defaultScheme.js
@@ -88,6 +89,10 @@ public class JitsiMeetConferenceOptions implements Parcelable {
         return token;
     }
 
+    public String getLocale() {
+        return locale;
+    }
+
     public Bundle getColorScheme() {
         return colorScheme;
     }
@@ -120,6 +125,7 @@ public class JitsiMeetConferenceOptions implements Parcelable {
         private String room;
         private String subject;
         private String token;
+        private String locale;
 
         private Bundle colorScheme;
         private Bundle featureFlags;
@@ -175,6 +181,11 @@ public class JitsiMeetConferenceOptions implements Parcelable {
         public Builder setToken(String token) {
             this.token = token;
 
+            return this;
+        }
+        public Builder setLocale(String locale) {
+            this.locale = locale;
+            LocaleDetector.locale = locale;
             return this;
         }
 
@@ -279,6 +290,7 @@ public class JitsiMeetConferenceOptions implements Parcelable {
             options.audioOnly = this.audioOnly;
             options.videoMuted = this.videoMuted;
             options.userInfo = this.userInfo;
+            options.locale = this.locale;
 
             return options;
         }

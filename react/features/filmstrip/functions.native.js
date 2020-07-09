@@ -25,7 +25,7 @@ export function isFilmstripVisible(stateful: Object | Function) {
     const { length: participantCount } = state['features/base/participants'];
     if (num != participantCount){
         num = participantCount;
-        //获取房间人数
+        //房间人数
         console.info(`participantCount${participantCount}!!!!!!!!!!!!!!!!!!!!!!!!!!`);
         const externalAPIScope = getAppProp(stateful ,"externalAPIScope");
         
